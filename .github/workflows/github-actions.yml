@@ -17,7 +17,7 @@ jobs:
       run:
         shell: bash
 
-steps:
+    steps:
       - name: Check out repository code
         uses: actions/checkout@v2
 
