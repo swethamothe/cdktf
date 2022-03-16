@@ -3,12 +3,12 @@ name: 'Terraform cdk Automation'
 on:
   push:
     branches:
-      - dev   
+      - main   
 
 jobs:
   terraform:
     #if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
-    name: 'Terraform-dev'
+    name: 'Terraform-main'
     runs-on: ubuntu-latest
     
     #environment: dev  
