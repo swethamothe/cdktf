@@ -43,6 +43,8 @@ jobs:
           python -m pip install --upgrade pipenv wheel
           pipenv install
           pipenv run cdktf synth
+          pipenv shell
+          pip install constructs
 
       #- name: Configure cdktf
        # run: |
