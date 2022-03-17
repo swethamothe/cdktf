@@ -7,12 +7,13 @@ on:
 
 jobs:
   terraform:
-    #if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     name: 'Terraform-main'
     runs-on: ubuntu-latest
     
     env:
       TERRAFORM_CLOUD_TOKEN: ${{ secrets.TF_API_TOKEN }}
+      TYRELL_ENVIRONMENT: 'dev'
       TF_ACTION_WORKING_DIR: 'dev'
 
     defaults:

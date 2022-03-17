@@ -1,0 +1,3 @@
+#! /bin/sh
+export TYRELL_ENVIRONMENT=dev
+export TF_API_TOKEN=al8RwmlQhcAuKA.atlasv1.RVrU5kGj0PoSuzIvOXQYxyFoaLW8rj7nuxZgfByH8utOrUAs8KYjVCFrjM2bx7OIR08

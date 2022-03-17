@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from constructs import Construct
-from cdktf import App, NamedRemoteWorkspace, TerraformStack, TerraformOutput
+from cdktf import App, NamedRemoteWorkspace, \
+        TerraformStack, TerraformOutput, RemoteBackend, NamedRemoteWorkspace
 from cdktf_cdktf_provider_aws import AwsProvider, ec2
 import configparser
 import os
@@ -14,9 +15,12 @@ class MyStack(TerraformStack):
        # self.account = config['environment']['account']
         self.account = os.getenv('TYRELL_ENVIRONMENT')
         self.variables = config['variables_{}'.format(self.account)]
+
         print(self.variables["instance_size"])
         
         AwsProvider(self, "AWS", region="eu-west-2")
+
+        RemoteBackend(self, organization=self.variables["organization"],workspaces=NamedRemoteWorkspace(name=os.getenv('TYRELL_ENVIRONMENT')))
 
         instance = ec2.Instance(self, "compute",
                                 ami=self.variables["ami"],
