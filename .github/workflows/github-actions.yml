@@ -6,7 +6,7 @@ on:
       - main   
 
 jobs:
-  #terraform:
+  terraform:
     #if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
     name: 'Terraform-main'
     runs-on: ubuntu-latest
@@ -42,7 +42,7 @@ jobs:
 
       - name: Configure cdktf
         run: |
-          cd ec2 && cdktf init --template="python"
+          mkdir cdk-init && cd cdk-init && cdktf init --template="python"
 
       - name: cdktf synth and diff or plan
         run: |
