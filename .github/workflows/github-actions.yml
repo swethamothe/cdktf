@@ -42,7 +42,7 @@ jobs:
 
       - name: Configure cdktf
         run: |
-          mkdir cdk-init && cd cdk-init && cdktf init --template="python"
+          mkdir cdk-init && cd cdk-init && cdktf init --template="python" --auto-approve
 
       - name: cdktf synth and diff or plan
         run: |
