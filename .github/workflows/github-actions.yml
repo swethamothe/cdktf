@@ -11,7 +11,9 @@ jobs:
     name: 'Terraform-main'
     runs-on: ubuntu-latest
     
-    #environment: dev  
+    env:
+      TERRAFORM_CLOUD_TOKEN: ${{ secrets.TF_API_TOKEN }}
+      TF_ACTION_WORKING_DIR: 'dev'
 
     defaults:
       run:
@@ -40,9 +42,9 @@ jobs:
         run: |
           python -m pip install --upgrade pipenv wheel
 
-      - name: Configure cdktf
-        run: |
-          mkdir cdk-init && cd cdk-init && cdktf init --template="python" && echo "yes"
+      # - name: Configure cdktf
+        #run: |
+          #mkdir cdk-init && cd cdk-init && cdktf init --template="python"
 
       - name: cdktf synth and diff or plan
         run: |
