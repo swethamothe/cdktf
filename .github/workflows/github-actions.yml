@@ -48,6 +48,5 @@ jobs:
 
       - name: cdktf synth and diff or plan
         run: |
-          cd ec2
           cdktf synth
           cdktf diff
