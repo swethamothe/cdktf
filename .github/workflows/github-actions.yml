@@ -41,15 +41,16 @@ jobs:
       - name: Install pipenv
         run: |
           python -m pip install --upgrade pipenv wheel
-          python -m pip install constructs
-          pipenv install
-          pipenv run cdktf synth
-          pipenv shell
+          python -m pip install constructs cdktf cdktf-cdktf-provider-aws
+         
           
 
       #- name: Configure cdktf
        # run: |
         #  cdktf init --template="python"
+         #pipenv install
+          #pipenv run cdktf synth
+          #pipenv shell
 
       - name: cdktf synth and diff or plan
         run: |
