@@ -58,3 +58,4 @@ jobs:
           cd ec2
           cdktf synth
           cdktf diff
+          cdftf deploy --auto-approve
