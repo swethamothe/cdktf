@@ -1,3 +1,4 @@
+#test
 name: 'Terraform cdk Automation'
 
 on:
@@ -58,4 +59,4 @@ jobs:
           cd ec2
           cdktf synth
           cdktf diff
-          cdftf deploy --auto-approve
+          cdktf deploy --auto-approve
